@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import readFile from './readFile';
 
-export default (first, second, ext) => {
+export default (first, second) => {
   const obj1 = readFile(first);
   const obj2 = readFile(second);
   const keys1 = Object.keys(obj1);
