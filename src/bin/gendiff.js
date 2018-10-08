@@ -10,7 +10,7 @@ program
   .arguments('<firstConfig> <secondConfig>')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'output format')
-  .action((file1, file2) => fs.writeFileSync(`result.${program.format}`, genDiff(file1, file2)))
+  .action((file1, file2) => fs.writeFileSync(`result.${program.format || 'txt'}`, genDiff(file1, file2)))
   .parse(process.argv);
 
 if (program.args.length === 0) program.help();
