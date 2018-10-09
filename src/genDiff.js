@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import parse from './parse';
+import parse from './parsers';
 import readFile from './readFile';
 
 const f = [
