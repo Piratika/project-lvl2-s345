@@ -6,3 +6,5 @@
 ### json
 [![asciicast](https://asciinema.org/a/hdGYAjFgs8SZaM1krUOlxHa6X.png)](https://asciinema.org/a/hdGYAjFgs8SZaM1krUOlxHa6X)
 ### yaml
+[![asciicast](https://asciinema.org/a/CM8MbrrApbaDQIQq9LHs6AkuE.png)](https://asciinema.org/a/CM8MbrrApbaDQIQq9LHs6AkuE)
+### ini
