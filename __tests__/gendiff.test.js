@@ -16,14 +16,6 @@ const secondINI = path.resolve(__dirname, '__fixtures__/after.ini');
 test('Get files diff for json file', () => {
   const result = fs.readFileSync(resultPath, 'utf-8');
   expect(genDiff(firstJSON, secondJSON, 'pretty')).toBe(result);
-});
-
-test('Get files diff for yaml file', () => {
-  const result = fs.readFileSync(resultPath, 'utf-8');
   expect(genDiff(firstYAML, secondYAML, 'pretty')).toBe(result);
-});
-
-test('Get files diff for ini file', () => {
-  const result = fs.readFileSync(resultPath, 'utf-8');
   expect(genDiff(firstINI, secondINI, 'pretty')).toBe(result);
 });
