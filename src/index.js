@@ -1,6 +1,12 @@
 import _ from 'lodash';
+import fs from 'fs';
+import path from 'path';
 import parse from './parsers';
-import readFile from './readFile';
+
+const readFile = (pathFile) => {
+  const pathRel = path.relative('', pathFile);
+  return { content: fs.readFileSync(pathRel, 'utf-8'), ext: path.extname(pathRel) };
+};
 
 const f = [
   {
@@ -35,7 +41,7 @@ const buildResult = (arr, format) => {
         return `    ${a.key}: ${a.value}`;
       case 'change':
         return `  - ${a.key}: ${a.valueOld}\n  + ${a.key}: ${a.valueNew}`;
-      default: break;
+      default: console.error('not change, not added, not removed. what is it');
     }
     return a;
   });
@@ -43,8 +49,8 @@ const buildResult = (arr, format) => {
 };
 
 export default (first, second, format) => {
-  const obj1 = parse(readFile(first));
-  const obj2 = parse(readFile(second));
+  const obj1 = parse(readFile(first).content, readFile(first).ext);
+  const obj2 = parse(readFile(second).content, readFile(second).ext);
   const keys = _.union(Object.keys(obj1), Object.keys(obj2));
   const result = keys.map((key) => {
     const { diff } = f.find(({ condition }) => condition(obj1, obj2, key));

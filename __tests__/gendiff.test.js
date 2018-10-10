@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import genDiff from '../src/genDiff';
+import genDiff from '../src';
 
 const resultPath = path.resolve(__dirname, '__fixtures__/result.txt');
 
