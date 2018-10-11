@@ -10,3 +10,5 @@
 ### ini
 [![asciicast](https://asciinema.org/a/X3NxVrBiFvQMDRPFzoVTCmtu3.png)](https://asciinema.org/a/X3NxVrBiFvQMDRPFzoVTCmtu3)
 ### json tree
+[![asciicast](https://asciinema.org/a/AAB7NFSq4Js6VwLiRS98Xw4ST.png)](https://asciinema.org/a/AAB7NFSq4Js6VwLiRS98Xw4ST)
+### plain format
