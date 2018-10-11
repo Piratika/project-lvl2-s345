@@ -8,3 +8,5 @@
 ### yaml
 [![asciicast](https://asciinema.org/a/CM8MbrrApbaDQIQq9LHs6AkuE.png)](https://asciinema.org/a/CM8MbrrApbaDQIQq9LHs6AkuE)
 ### ini
+[![asciicast](https://asciinema.org/a/X3NxVrBiFvQMDRPFzoVTCmtu3.png)](https://asciinema.org/a/X3NxVrBiFvQMDRPFzoVTCmtu3)
+### json tree
