@@ -7,4 +7,4 @@ const parseFunctions = {
   '.ini': ini.parse,
 };
 
-export default (content, ext) => parseFunctions[ext](content);
+export default (ext, content) => parseFunctions[ext](content);
