@@ -12,3 +12,5 @@
 ### json tree
 [![asciicast](https://asciinema.org/a/AAB7NFSq4Js6VwLiRS98Xw4ST.png)](https://asciinema.org/a/AAB7NFSq4Js6VwLiRS98Xw4ST)
 ### plain format
+[![asciicast](https://asciinema.org/a/znVQ4WMtuFAjNLCmp6yNZuq7r.png)](https://asciinema.org/a/znVQ4WMtuFAjNLCmp6yNZuq7r)
+### json format
