@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import parse from './parsers';
-import render from './render';
+import render from './renderers/render';
 import gendiff from './genDiff';
 
 const readFile = (pathFile) => {

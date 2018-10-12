@@ -4,6 +4,7 @@ import genDiff from '../src';
 
 const resultPathPretty = path.resolve(__dirname, '__fixtures__/resultPretty.txt');
 const resultPathPlain = path.resolve(__dirname, '__fixtures__/resultPlain.txt');
+const resultPathJSON = path.resolve(__dirname, '__fixtures__/resultJSON.txt');
 
 const firstJSON = path.resolve(path.resolve(), __dirname, '__fixtures__/before.json');
 const secondJSON = path.resolve(__dirname, '__fixtures__/after.json');
@@ -17,10 +18,14 @@ const secondINI = path.resolve(__dirname, '__fixtures__/after.ini');
 test('Get files diff', () => {
   const resultPretty = fs.readFileSync(resultPathPretty, 'utf-8');
   const resultPlain = fs.readFileSync(resultPathPlain, 'utf-8');
+  const resultJSON = fs.readFileSync(resultPathJSON, 'utf-8');
   expect(genDiff(firstJSON, secondJSON, 'pretty')).toBe(resultPretty);
   expect(genDiff(firstYAML, secondYAML, 'pretty')).toBe(resultPretty);
   expect(genDiff(firstINI, secondINI, 'pretty')).toBe(resultPretty);
   expect(genDiff(firstJSON, secondJSON, 'plain')).toBe(resultPlain);
   expect(genDiff(firstYAML, secondYAML, 'plain')).toBe(resultPlain);
   expect(genDiff(firstINI, secondINI, 'plain')).toBe(resultPlain);
+  expect(genDiff(firstJSON, secondJSON, 'json')).toBe(resultJSON);
+  expect(genDiff(firstYAML, secondYAML, 'json')).toBe(resultJSON);
+  expect(genDiff(firstINI, secondINI, 'json')).toBe(resultJSON);
 });
