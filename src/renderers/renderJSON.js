@@ -1,20 +1,17 @@
-/*
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const typeChange = {
-  removed: a => (key = a.key) => ({ [key]: 'removed' }),
-  added: a => (key = a.key, value = a.value) => ({ [key]: { hasbeen: 'added', value } }),
+  removed: () => 'removed',
+  added: a => ({ hasbeen: 'added', value: a.value }),
   nochange: () => {},
-  change: a => (key = a.key, valueNew = a.valueNew, valueOld = a.valueOld) => {
-  ({ [key]: { hasbeen: 'change', valueOld, valueNew } })},
-  haschildren: (a, f) => (key = a.key, children = a.children) => ({ [key]: f(children) }),
+  change: a => ({ hasbeen: 'changed', valueOld: a.valueOld, valueNew: a.valueNew }),
+  haschildren: (a, f) => f(a.children),
 };
 
-const stringifyJSON = (obj) => {
-  const result = {};
-  obj.forEach(a => result[a.key] = typeChange[a.type](a, stringifyJSON));
-  return `${JSON.stringify(result)}`;
-};
+const stringifyJSON = obj => obj.reduce((acc, a) => {
+  const value = typeChange[a.type](a, stringifyJSON);
+  acc[a.key] = value;
+  return acc;
+}, {});
 
 export default stringifyJSON;
-*/
