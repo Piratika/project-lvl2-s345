@@ -3,9 +3,9 @@ import stringifyPlain from './renderPlain';
 import stringifyJSON from './renderJSON';
 
 const renderType = {
-  pretty: result => `${stringifyPretty(result, 0)}\n`,
-  plain: result => `${stringifyPlain(result, '')}\n`,
-  json: result => `${JSON.stringify(stringifyJSON(result))}\n`,
+  pretty: stringifyPretty,
+  plain: stringifyPlain,
+  json: stringifyJSON,
 };
 
 const buildResult = (result, format) => renderType[format](result);
