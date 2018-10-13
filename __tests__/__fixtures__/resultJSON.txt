@@ -1,1 +1,53 @@
-{"common":{"setting2":"removed","setting3":{"hasbeen":"changed","valueOld":true,"valueNew":{"key":"value"}},"setting6":{"ops":{"hasbeen":"added","value":"vops"}},"follow":{"hasbeen":"added","value":false},"setting4":{"hasbeen":"added","value":"blah blah"},"setting5":{"hasbeen":"added","value":{"key5":"value5"}}},"group1":{"baz":{"hasbeen":"changed","valueOld":"bas","valueNew":"bars"},"nest":{"hasbeen":"changed","valueOld":{"key":"value"},"valueNew":"str"}},"group2":"removed","group3":{"hasbeen":"added","value":{"fee":"100500"}}}
+{
+ "common": {
+  "setting2": "removed",
+  "setting3": {
+   "hasbeen": "changed",
+   "valueOld": true,
+   "valueNew": {
+    "key": "value"
+   }
+  },
+  "setting6": {
+   "ops": {
+    "hasbeen": "added",
+    "value": "vops"
+   }
+  },
+  "follow": {
+   "hasbeen": "added",
+   "value": false
+  },
+  "setting4": {
+   "hasbeen": "added",
+   "value": "blah blah"
+  },
+  "setting5": {
+   "hasbeen": "added",
+   "value": {
+    "key5": "value5"
+   }
+  }
+ },
+ "group1": {
+  "baz": {
+   "hasbeen": "changed",
+   "valueOld": "bas",
+   "valueNew": "bars"
+  },
+  "nest": {
+   "hasbeen": "changed",
+   "valueOld": {
+    "key": "value"
+   },
+   "valueNew": "str"
+  }
+ },
+ "group2": "removed",
+ "group3": {
+  "hasbeen": "added",
+  "value": {
+   "fee": "100500"
+  }
+ }
+}
