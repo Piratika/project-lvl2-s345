@@ -1,5 +1,4 @@
 export default (result) => {
-
   const typeChange = {
     removed: () => 'removed',
     added: a => ({ hasbeen: 'added', value: a.value }),
