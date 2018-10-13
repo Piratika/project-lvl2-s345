@@ -5,15 +5,18 @@ const deepStr = d => '    '.repeat(d);
 export default (ast) => {
   const stringifyValuePretty = (key, value, deep, f) => {
     if (_.isArray(value)) return `${key}: ${f(value, deep + 1)}`;
-    if (_.isObject(value)) return `${key}: {\n${deepStr(deep + 2)}${Object.keys(value).map(a => stringifyValuePretty(a, value[a], deep + 1)).join('\n')}\n${deepStr(deep + 1)}}`;
+    if (_.isObject(value)) {
+      const valueToString = Object.keys(value).map(a => stringifyValuePretty(a, value[a], deep + 1)).join('\n');
+      return `${key}: {\n${deepStr(deep + 2)}${valueToString}\n${deepStr(deep + 1)}}`;
+    }
     return `${key}: ${value}`;
   };
 
   const typeChangePretty = {
     removed: (deep, a, f) => `${deepStr(deep)}  - ${stringifyValuePretty(a.key, a.value, deep, f)}`,
     added: (deep, a, f) => `${deepStr(deep)}  + ${stringifyValuePretty(a.key, a.value, deep, f)}`,
-    nochange: (deep, a, f) => `${deepStr(deep)}    ${stringifyValuePretty(a.key, a.value, deep, f)}`,
-    change: (deep, a, f) => [`${deepStr(deep)}  - ${stringifyValuePretty(a.key, a.valueOld, deep, f)}`, `${deepStr(deep)}  + ${stringifyValuePretty(a.key, a.valueNew, deep, f)}`],
+    unchanged: (deep, a, f) => `${deepStr(deep)}    ${stringifyValuePretty(a.key, a.value, deep, f)}`,
+    changed: (deep, a, f) => [`${deepStr(deep)}  - ${stringifyValuePretty(a.key, a.valueOld, deep, f)}`, `${deepStr(deep)}  + ${stringifyValuePretty(a.key, a.valueNew, deep, f)}`],
     haschildren: (deep, a, f) => `${deepStr(deep)}    ${stringifyValuePretty(a.key, a.children, deep, f)}`,
   };
 

@@ -2,8 +2,8 @@ export default (result) => {
   const typeChange = {
     removed: () => 'removed',
     added: a => ({ hasbeen: 'added', value: a.value }),
-    nochange: () => {},
-    change: a => ({ hasbeen: 'changed', valueOld: a.valueOld, valueNew: a.valueNew }),
+    unchanged: () => {},
+    changed: a => ({ hasbeen: 'changed', valueOld: a.valueOld, valueNew: a.valueNew }),
     haschildren: (a, f) => f(a.children),
   };
 

@@ -18,12 +18,12 @@ const f = [
   },
   {
     condition: (obj1, obj2, key) => obj1[key] === obj2[key],
-    diff: (obj1, obj2, key) => ({ type: 'nochange', key, value: obj2[key] }),
+    diff: (obj1, obj2, key) => ({ type: 'unchanged', key, value: obj2[key] }),
   },
   {
     condition: (obj1, obj2, key) => obj1[key] !== obj2[key],
     diff: (obj1, obj2, key) => ({
-      type: 'change', key, valueOld: obj1[key], valueNew: obj2[key],
+      type: 'changed', key, valueOld: obj1[key], valueNew: obj2[key],
     }),
   },
 ];
